@@ -1,3 +1,34 @@
+//auto called function
+(function(global) {
+  var url = document.URL;
+
+  //Obtain the current anchor on the page
+  var splittedUrl = url.split("#");
+  var anchor;
+  //if there is an anchor, save it
+  if(splittedUrl.length > 1) {
+    anchor = splittedUrl[1];
+  }
+
+  // posible snippets to choose, can also be an array
+  var principalSnippet = "snippets/principal-snippet.html";
+  var que_es_taichiSnippet = "snippets/que_es_taichi-snippet.html";
+  var quienes_somosSnippet = "snippets/quienes_somos-snippet.html";
+  var galeriaSnippet = "snippets/galeria-snippet.html";
+  var contactoSnippet = "snippets/contacto-snippet.html";
+
+  var currentSnippet = principalSnippet;
+
+   // replace #main-container contents with the ones of the selected snippet
+   $.ajax({
+     url: currentSnippet,
+     success: function(result) {
+       $("#main-container").html(result);
+     }
+   });
+
+})(window);
+
 function initMap() {
       var myLatLng = { lat: 20.705551, lng: -103.391372 };
 
@@ -35,8 +66,7 @@ function initMap() {
             title: 'TaiChi Colomos',
         });
 
-        marker.addListener('click', function() {  
+        marker.addListener('click', function() {
             infoWindow.open(map, marker);
         });
 }
-
