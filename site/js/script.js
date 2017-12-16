@@ -44,7 +44,7 @@ function initMap() {
             streetViewControlOptions: {
                 position: google.maps.ControlPosition.LEFT_TOP
             },
-            mapTypeControl: false,
+            mapTypeControl: true,
             scrollwheel: false,
             //draggable: !("ontouchend" in document),
         });
