@@ -58,6 +58,7 @@ $('.link-element').click(function() {
   updateSnippet(currentSnippet);
 });
 
+// Maps api script
 function initMap() {
       var myLatLng = { lat: 20.705551, lng: -103.391372 };
 
