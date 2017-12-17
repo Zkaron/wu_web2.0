@@ -28,7 +28,7 @@ var contactoSnippet = "snippets/contacto-snippet.html";
 //if no anchor matches then returns to index
 function selectSnippetByAnchor(currAnchor) {
   var currentSnippet = principalSnippet;
-  if(currAnchor.includes("que_es")) {
+  if(currAnchor.includes("que_es_taichi")) {
     currentSnippet = que_es_taichiSnippet;
   } else if(currAnchor.includes("quienes_somos")) {
     currentSnippet = quienes_somosSnippet;
