@@ -1,33 +1,62 @@
+// posible snippets to choose, can also be an array
+var principalSnippet = "snippets/principal-snippet.html";
+var que_es_taichiSnippet = "snippets/que_es_taichi-snippet.html";
+var quienes_somosSnippet = "snippets/quienes_somos-snippet.html";
+var galeriaSnippet = "snippets/galeria-snippet.html";
+var contactoSnippet = "snippets/contacto-snippet.html";
+
 //auto called function
 (function(global) {
-  var url = document.URL;
+  var currentSnippet = principalSnippet;
+
+  var url = document.URL;  //get current url
 
   //Obtain the current anchor on the page
   var splittedUrl = url.split("#");
   var anchor;
-  //if there is an anchor, save it
+  //if there is an anchor, save
   if(splittedUrl.length > 1) {
     anchor = splittedUrl[1];
+    currentSnippet = selectSnippetByAnchor(anchor);
   }
 
-  // posible snippets to choose, can also be an array
-  var principalSnippet = "snippets/principal-snippet.html";
-  var que_es_taichiSnippet = "snippets/que_es_taichi-snippet.html";
-  var quienes_somosSnippet = "snippets/quienes_somos-snippet.html";
-  var galeriaSnippet = "snippets/galeria-snippet.html";
-  var contactoSnippet = "snippets/contacto-snippet.html";
-
-  var currentSnippet = principalSnippet;
-
-   // replace #main-container contents with the ones of the selected snippet
-   $.ajax({
-     url: currentSnippet,
-     success: function(result) {
-       $("#main-container").html(result);
-     }
-   });
+  updateSnippet(currentSnippet);
 
 })(window);
+
+//Selects the correct snippet according to the given anchor
+//if no anchor matches then returns to index
+function selectSnippetByAnchor(currAnchor) {
+  var currentSnippet = principalSnippet;
+  if(currAnchor.includes("que_es")) {
+    currentSnippet = que_es_taichiSnippet;
+  } else if(currAnchor.includes("quienes_somos")) {
+    currentSnippet = quienes_somosSnippet;
+  } else if(currAnchor.includes('galeria')) {
+    currentSnippet = galeriaSnippet;
+  } else if(currAnchor.includes('contacto')) {
+    currentSnippet = contactoSnippet;
+  }
+
+  return currentSnippet;
+}
+
+//Makes the ajax request to replace html code
+function updateSnippet(snippet) {
+  $.ajax({
+    url: snippet,
+    success: function(result) {
+      $("#main-container").html(result);
+    }
+  });
+}
+
+//JQuery click event that is fired each time a navbar item is clicked
+$('.link-element').click(function() {
+  var anchor = $(this).attr('href');
+  var currentSnippet = selectSnippetByAnchor(anchor);
+  updateSnippet(currentSnippet);
+});
 
 function initMap() {
       var myLatLng = { lat: 20.705551, lng: -103.391372 };
