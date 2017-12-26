@@ -1,0 +1,35 @@
+a:hover {
+  text-decoration: none;
+}
+
+/*.navbar-nav a:hover, .navbar-nav a:active {
+	border-bottom: thick #e6e6e6 solid;
+	border-radius: 0 15px;
+}*/
+
+.brand {
+  	font-family: 'Merriweather Sans', sans-serif;
+    color: #000;
+    text-shadow: 1px 1px 2px #A19D9D;
+    font-weight: bold;
+}
+
+.navbar-nav > li {
+  padding-left: 8.2px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  font-size: 18px;
+  color: white;
+}
+
+.fa-social-icon {
+  font-size:24px;
+  color:white;
+}
+
+/*Contacto*/
+.bigicon {
+  font-size: 35px;
+  color: #00000;
+}
