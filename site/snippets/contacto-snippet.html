@@ -5,7 +5,7 @@
 </div>
 <br>
 <div class="row">
-  <div class="card col-sm-12">
+  <div class=" col-sm-12">
     <div class="card-header">
       <ul class="nav nav-tabs">
         <div class="col-md-6 d-flex justify-content-center">
@@ -42,38 +42,42 @@
   </div>
 </div>
 
-<br>
-<br>
-<br>
-<br>
+<br />
+<br />
+<br />
+
 <!--Formulario de contacto-->
-<div id="formulario" class="card" style="background-color: #E0E0E0; border-color: #E0E0E0;">
+<div id="formulario" class="card mt-5" style="background-color: #E0E0E0; border-color: #E0E0E0;">
   <br>
   <h2 class="text-center">Escríbenos</h2>
   <div class="row">
-    <form class="form-horizontal col-md-10 offset-md-3" method="post">
+    <form class="form-horizontal col-md-10 offset-md-2" method="post">
 
       <fieldset>
-        <div class="form-group ">
-
-          <span class="col-md-2 col-md-offset-2 text-center"></span>
+        <div class="form-group d-block">
           <div class="col-md-8">
-            <label for="email"><i class="fa fa-user bigicon"></i></label>
-            <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control">
+            <div class="row">
+              <label for="fname" class="col-2"><i class="fa fa-user bigicon"></i></label>
+              <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control col-9 col-md-10">
+            </div>
           </div>
         </div>
 
         <div class="form-group">
-          <span class="col-md-2 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
           <div class="col-md-8">
-            <input id="email" name="email" type="text" placeholder="Email" class="form-control">
+            <div class="row">
+              <label for="email" class="col-2"><i class="fa fa-envelope-o bigicon"></i></span></label>
+              <input id="email" name="email" type="text" placeholder="Email" class="form-control col-9 col-md-10">
+            </div>
           </div>
         </div>
 
         <div class="form-group">
-          <span class="col-md-2 col-md-offset-2 text-center"><i class="fa fa-pencil bigicon"></i></span>
           <div class="col-md-8">
-            <textarea class="form-control" id="message" name="message" placeholder="Ingresa tu mensaje" rows="7"></textarea>
+            <div class="row">
+              <label for="message" class="col-2"><i class="fa fa-pencil bigicon"></i></label>
+              <textarea class="form-control col-9 col-md-10" id="message" name="message" placeholder="Ingresa tu mensaje" rows="7" cols="50"></textarea>
+            </div>
           </div>
         </div>
 

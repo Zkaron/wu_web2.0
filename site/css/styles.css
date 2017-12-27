@@ -2,6 +2,10 @@ a:hover {
   text-decoration: none;
 }
 
+textarea {
+  overflow-x: hidden;
+}
+
 /*.navbar-nav a:hover, .navbar-nav a:active {
 	border-bottom: thick #e6e6e6 solid;
 	border-radius: 0 15px;
